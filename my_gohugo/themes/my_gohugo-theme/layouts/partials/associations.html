@@ -1,0 +1,54 @@
+{{ if eq .IsNode true }}
+<div class="elementOrg">
+  {{ range .Pages }}
+      <div class="assoElement">
+        <a href="{{.Permalink}}">{{ .Title }}</a>
+        <br />{{ .Params.domain }}
+        <br /><img src="{{ .Params.photo }}" style="height: 245px;" alt="Photo de l'association" />
+      </div>
+  {{ end }}
+</div>
+{{ else }}
+<div class="assoElement">
+  <h2>{{ .Title }}</h2><br />
+  <h3>{{ .Params.domain }}</h3><br />
+  {{ if ne .Params.address "" }}
+    <strong>{{ .Params.address }}</strong>
+  {{ end }}
+  {{ if ne .Params.description "" }}
+    <strong>{{ .Params.description }}</strong>
+  {{ end }}
+  <img src="{{ .Params.photo }}" style="height: 245px;" alt="Association Picture" />
+  <p>{{ .Content }}</p>
+  {{ $assoName := .Params.title }}
+  {{ $Now := dateFormat "2006-01-02" now}}
+  <br />
+  <div id="evenementsHide" style="cursor:pointer;">
+      <p id="changetxt">Display old events</p>
+  </div>
+  <br />
+
+  <div class="elementOrg">
+  {{ range where .Site.RegularPages.ByDate "Section" "events" }}
+    {{ if eq $assoName .Params.association }}
+    {{ $when := dateFormat "2006-01-02" .Params.when }}
+      {{ if lt $when $Now }}
+        <div class="pastInAsso">
+            <h3><a href="{{.Permalink}}">{{ .Title }}</a></h3>
+            <h4>Le {{ $when }}</h4>
+            <img src="{{ .Params.photos.photo1 }}" style="height: 175px;" alt="Evenement picture" />
+            <h4>{{ .Params.description }}</h4>
+        </div>
+      {{ else }}
+      <div class="futureInAsso">
+          <h3><a href="{{.Permalink}}">{{ .Title }}</a></h3>
+          <h4>Le {{ $when }}</h4>
+          <img src="{{ .Params.photos.photo1 }}" style="height: 175px;" alt="Evenement picture" />
+          <h4>{{ .Params.description }}</h4>
+      </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,8 +1,8 @@
 ---
-title: ""
-domain: ""
+title: "asso1"
+domain: "chess"
 address: ""
-descprition: ""
-photo: ""
+description: ""
+photo: "https://w.wallhaven.cc/full/nk/wallhaven-nkxrw1.jpg"
 important: false
 ---

@@ -3,6 +3,8 @@ languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "my_gohugo-theme"
 themesDir = "./themes"
+newContentEditor = "nvim"
+
 [taxonomies]
   tag = "tags"
   category = "categories"

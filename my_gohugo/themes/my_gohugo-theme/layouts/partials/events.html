@@ -1,0 +1,57 @@
+{{ if eq .IsNode true }}
+{{ $Now := dateFormat "2006-01-02" now}}
+
+<div class="PastEvents">
+  {{ range where .Pages.ByDate "Section" "events" }}
+      {{ $when := dateFormat "2006-01-02" .Params.when }}
+      {{ if lt $when $Now }}
+      <div class="contenu">
+        <a href="{{.URL}}">{{ .Title }}</a>
+        <br />
+        {{ range .Params.photos }}
+        <img src="{{ . }}" style="height: 245px;" />
+        {{ end }}
+        <br /> {{ $when }}
+        <br /> {{ .Params.address.label}}
+      </div>
+      {{ end }}
+  {{ end }}
+</div>
+<div class="UpcomingEvents">
+
+  {{ range where .Pages.ByDate "Section" "events" }}
+      {{ $when := dateFormat "2006-01-02" .Params.when }}
+      {{ if ge $when $Now }}
+      <div class="contenu">
+        <a href="{{.URL}}">{{ .Title }}</a>
+        <br />
+        {{ range .Params.photos }}
+        <img src="{{ . }}" style="height: 245px;"/>
+        {{ end }}
+        <br /> {{ $when }}
+        <br /> {{ .Params.address.label}}
+      </div>
+      {{ end }}
+  {{ end }}
+</div>
+{{ else }}
+<div class="contenu">
+  <a href="{{.URL}}"><h1>{{ .Title }}</h1></a>
+  <br />
+  {{ range .Params.photos }}
+  <img src="{{ . }}" style="height: 245px;" />
+  {{ end }}
+  <br /><p>Le {{ dateFormat "2006-01-02" .Params.when  }}</p>
+  <p>
+    {{ range .Params.address }}
+    {{ . }}
+    {{ end }}
+  </p>
+  {{ if ne .Params.association ""}}
+  <br /><p>Association: <a href="/associations/{{.Params.association}}">{{.Params.association}}</a></p>
+  {{ end }}
+  {{ if ne .Params.description "" }}
+  <br /> {{ .Params.description }}
+  {{ end }}
+</div>
+{{ end }}

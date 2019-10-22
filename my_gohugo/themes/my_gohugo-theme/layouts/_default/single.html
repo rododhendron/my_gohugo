@@ -3,11 +3,12 @@
 {{  partial "head.html" . }}
 <body>
   <!-- Inclusion  du "header" (navbar , ...)  -->
-    <div id="nav1">
       {{  partial "header.html" . }}
       <div id="corps">
-        {{ $var := add .Section ".html"}}
-        {{ partial $var . }}
+            {{ $var := add .Section ".html"}}
+            {{ if ne $var ".html" }}
+              {{ partial $var . }}
+            {{ end }}
       </div>
     </div><!-- Inclusion  du "footer" (fermeture  du tag body , ...)  -->
 {{  partial "footer.html" . }}

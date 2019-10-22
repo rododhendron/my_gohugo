@@ -1,0 +1,6 @@
+<div id="presentation">
+  {{ range where .Site.Pages "Permalink" "http://localhost:1313/presentation/" }}
+    <img src="{{ .Params.photo }}" alt="town hall" width="1000px"/>
+    {{ .Content }}
+  {{ end }}
+</div>

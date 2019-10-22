@@ -1,8 +1,8 @@
 ---
-title: ""
-domain: ""
+title: "asso2"
+domain: "fencing"
 address: ""
-descprition: ""
-photo: ""
+description: ""
+photo: "https://w.wallhaven.cc/full/8x/wallhaven-8x5eqo.png"
 important: false
 ---

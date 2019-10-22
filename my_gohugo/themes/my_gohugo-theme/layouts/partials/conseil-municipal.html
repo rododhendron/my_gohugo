@@ -1,0 +1,15 @@
+<div>{{ partial "presentation.html" . }}</div>
+
+<div id="municipalOrg">
+  {{ range .Pages }}
+        <div class="municipalMembers">
+    <h2>{{ .Params.firstNames }} {{ .Params.lastname | upper }}</h2>
+    <h3>{{ .Params.role }}</h3>
+    {{ if eq .Params.photo "" }}
+      <img src="https://w.wallhaven.cc/full/96/wallhaven-96zg71.jpg" height="250px" />
+    {{ else }}
+      <img src="{{ .Params.photo }}" height="250px" />
+    {{ end }}
+</div>
+{{ end }}
+</div>

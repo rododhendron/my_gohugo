@@ -2,7 +2,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
 }
 #topBar
 {
@@ -35,13 +34,13 @@
   display: none;
 }
 
-#nav1{
+body{
   height: 100%;
   width: 100%;
   display: grid;
   grid-gap: 0px;
   grid-template-columns: 1fr 1fr 1fr 1fr 0.3fr 0.7fr;
-  grid-template-rows: 0.3fr 0.2fr 0.2fr 1.7fr;
+  grid-template-rows: 0.3fr 0.2fr 0.2fr 1.7fr 0.7;
 }
 #topBar
 {
@@ -67,4 +66,71 @@
 #corps {
   grid-area: 2 / 1 / 5 / 6;
   z-index: 0;
+}
+#searchBox{
+  height: 10px;
+}
+#associationQuery {
+  z-index: 2;
+}
+#footerBar{
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 1fr;
+  grid-area: 5 / 1 / 6 / 8;
+}
+#indexContent {
+  grid-area: 2 / 1 / 5 / 6;
+}
+.contenu {
+  border: 1px black solid;
+  margin: 3px;
+  padding: 3px;
+}
+#mapsIn {
+  margin-left: 10px;
+  height: 500px;
+  width: 500px;
+}
+#municipalOrg {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr
+}
+.municipalMembers {
+  background-color: rgb(134,165,173);
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+  align: center;
+}
+#presentation {
+  align: center;
+  text-align: center;
+  padding: 3px;
+  margin: 3px;
+}
+
+.assoElement {
+  background-color: rgb(134,165,173);
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+  align: center;
+}
+
+.elementOrg {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr
+}
+#evenementsHide {
+  background-color: lightblue;
+  margin: 0px;
+  padding: 0px;
+}
+#evenementsHide:hover {
+  background-color: blue;
+}
+.pastInAsso {
+  display: none;
 }

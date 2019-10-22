@@ -2,9 +2,24 @@
 <html lang="fr">
 {{  partial "head.html" . }}
 <body>
-  <div id="nav1">
   <!-- Inclusion  du "header" (navbar , ...)  -->
   {{  partial "header.html" . }}
+  {{  partial "query.html" . }}
+  <div id="indexContent">
+    {{  range first 10 (where .Site.RegularPages.ByDate "Section" "events") }}
+    {{ if eq .Params.important true }}
+    <div class="contenu">
+      {{ if eq .Draft false }}
+      <a href="{{.Permalink}}">{{ .Title }}</a>
+      {{ else }}
+      {{ .Title }}
+      {{ end }}
+      <br /> <img src="{{ .Params.photos.photo1 }}" style="height: 245px;" alt="Photo de l'évenement" />
+      <br /> {{ dateFormat "2006-01-02" .Params.when  }}
+      <br /> {{ .Params.label}}
+    </div>
+    {{ end }}
+    {{ end }}
   </div>
 <!-- Inclusion  du "footer" (fermeture  du tag body , ...)  -->
 {{  partial "footer.html" . }}
