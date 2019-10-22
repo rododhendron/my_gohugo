@@ -1,5 +1,5 @@
 ---
-title: "second"
+title: "Second event"
 address:
   postalcode: "75000"
   city: "Paris"
@@ -13,4 +13,3 @@ draft: true
 important: false
 association: ""
 ---
-amusement

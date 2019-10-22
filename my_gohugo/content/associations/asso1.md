@@ -1,5 +1,5 @@
 ---
-title: "asso1"
+title: "ChessMate"
 domain: "chess"
 address: ""
 description: ""

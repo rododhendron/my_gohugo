@@ -2,7 +2,7 @@
 title: ""
 domain: ""
 address: ""
-descprition: ""
+description: ""
 photo: ""
 important: false
 ---

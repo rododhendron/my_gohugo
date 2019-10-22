@@ -1,5 +1,5 @@
 ---
-title: "chess past tournament"
+title: "Chess past tournament"
 address:
   postalcode: "75000"
   city: "Paris"
@@ -11,5 +11,5 @@ photos:
   photo2: ""
 draft: true
 important: true
-association: "asso1"
+association: "chessmate"
 ---

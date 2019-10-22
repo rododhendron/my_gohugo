@@ -5,6 +5,7 @@
     <div class="element" id="tb7" style="cursor: pointer;" onclick="window.location.href='http://localhost:1313/associations/';">Associations</div>
     <div class="element elementOnOver1" id="tb3" style="cursor: pointer;" onclick="window.location.href='http://localhost:1313/events/';">Events</div>
     <div class="element" id="tb4" style="cursor: pointer;" onclick="window.location.href='http://localhost:1313/annexes/calendar/';">Calendar</div>
+    <div class="element" id="tb8" style="cursor: pointer;"><i class="fa fa-bars" ></i></div>
   </div>
   <div class="element elementCache elementOnOver1" id="tb5" style="cursor: pointer;" onclick="window.location.href='http://localhost:1313/events/?filter=past';">Past Events</div>
   <div class="element elementCache elementOnOver1" id="tb6" style="cursor: pointer;" onclick="window.location.href='http://localhost:1313/events/?filter=future';">Upcomming Events</div>
@@ -12,12 +13,13 @@
     <form>
       <input id="searchBox" name="query" placeholder="Search" type="text"/>
       <input id="searchTap" value="Go" type="submit"/>
-
       {{ range where .Site.RegularPages "Section" "associations" }}
-        <div>
-          <a href="{{ .URL }}">{{ .Title }}
-          <img src="{{ .Params.photo }}" width="200px" /></a>
+      {{ if eq .Params.important true }}
+        <div class="element">
+          <a href="{{ .URL }}"><h3>{{ .Title }}</h3><br />
+          <img src="{{ .Params.photo }}" width="250px" /></a>
         </div>
+      {{ end }}
       {{ end }}
     </form>
   </div>

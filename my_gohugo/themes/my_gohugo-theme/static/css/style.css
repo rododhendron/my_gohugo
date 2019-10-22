@@ -20,17 +20,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightblue;
+  background-color: rgb(160,226,222);
+  align: center;
+  padding: 5px;
 
 
 }
 .element:hover
 {
-  background-color: green;
+  background-color: rgb(13,173,193);
 }
 
 .elementCache{
-  background-color: lightblue;
   display: none;
 }
 
@@ -39,13 +40,13 @@ body{
   width: 100%;
   display: grid;
   grid-gap: 0px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 0.3fr 0.7fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 0.3fr 0.9fr;
   grid-template-rows: 0.3fr 0.2fr 0.2fr 1.7fr 0.7;
 }
 #topBar
 {
   height: 50px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.2fr;
   grid-template-rows: 1fr;
   grid-area: 1 / 1 / 2 / 8;
 }
@@ -57,14 +58,16 @@ body{
 #tb5 { grid-area: 2 / 4 / 3 / 5; z-index: 1;}
 #tb6 { grid-area: 3 / 4 / 4 / 5; z-index: 1;}
 #navBar{
-  background-color: lightblue;
+  background-color: rgb(160,226,222);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.2fr 1.8fr;
   grid-area: 2 / 6 / 5 / 8;
+  display: none;
+  z-index: 2;
 }
 #corps {
-  grid-area: 2 / 1 / 5 / 6;
+  grid-area: 2 / 1 / 5 / 7;
   z-index: 0;
 }
 #searchBox{
@@ -74,19 +77,20 @@ body{
   z-index: 2;
 }
 #footerBar{
-  background-color: lightblue;
+  background-color: rgb(160,226,222);
   display: grid;
   grid-template-columns: 0.5fr 1fr;
   grid-template-rows: 1fr;
   grid-area: 5 / 1 / 6 / 8;
 }
 #indexContent {
-  grid-area: 2 / 1 / 5 / 6;
+  grid-area: 2 / 1 / 5 / 7;
 }
 .contenu {
-  border: 1px black solid;
-  margin: 3px;
+  background-color: rgb(188,226,224);
+  margin: 75px;
   padding: 3px;
+  text-align: center;
 }
 #mapsIn {
   margin-left: 10px;

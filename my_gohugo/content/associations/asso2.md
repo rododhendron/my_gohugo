@@ -1,5 +1,5 @@
 ---
-title: "asso2"
+title: "FencingTime"
 domain: "fencing"
 address: ""
 description: ""

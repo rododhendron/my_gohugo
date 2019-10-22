@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 {{  partial "head.html" . }}
 <body>
   <!-- Inclusion  du "header" (navbar , ...)  -->
   {{  partial "header.html" . }}
-  {{  partial "query.html" . }}
   <div id="indexContent">
     {{  range first 10 (where .Site.RegularPages.ByDate "Section" "events") }}
     {{ if eq .Params.important true }}

@@ -1,5 +1,5 @@
 ---
-title: "first"
+title: "First event"
 address:
   postalcode: "75000"
   city: "Paris"

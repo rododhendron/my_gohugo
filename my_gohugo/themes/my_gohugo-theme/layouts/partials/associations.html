@@ -15,12 +15,15 @@
   {{ if ne .Params.address "" }}
     <strong>{{ .Params.address }}</strong>
   {{ end }}
+  <br />
   {{ if ne .Params.description "" }}
     <strong>{{ .Params.description }}</strong>
   {{ end }}
+  <br />
   <img src="{{ .Params.photo }}" style="height: 245px;" alt="Association Picture" />
   <p>{{ .Content }}</p>
-  {{ $assoName := .Params.title }}
+  {{ $assoName := .Params.title | lower }}
+  {{ $assoName }}
   {{ $Now := dateFormat "2006-01-02" now}}
   <br />
   <div id="evenementsHide" style="cursor:pointer;">

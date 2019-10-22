@@ -25,4 +25,7 @@ $(document).ready(function(){
   $("#evenementsHide").click(function(){
     $(".pastInAsso").toggle(function(){$("#changetxt").text($("#changetxt").text() == 'Display old events' ? 'Hide old events' : 'Display old events');});
   });
+  $("#tb8").click(function(){
+    $("#navBar").toggle('slide');
+  });
 });

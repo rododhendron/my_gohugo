@@ -11,5 +11,5 @@ photos:
   photo2: ""
 draft: true
 important: true
-association: "asso1"
+association: "chessmate"
 ---
