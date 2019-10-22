@@ -1,0 +1,4 @@
+run with :
+hugo server -D
+
+"install hugo framework first"
